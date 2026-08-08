@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brugzicht Boeken &amp; Muziek — Christelijke boekhandel in Krimpen aan den IJssel</title>
+<meta name="description" content="Brugzicht Boeken & Muziek: christelijke boekhandel aan Stad en Landschap in Krimpen aan den IJssel. Bijbels, boeken, muziek en persoonlijk leesadvies. Ook levering aan kerken en scholen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!--
+THESIS: A bookshop with booksellers, not a database with a cart — the page sells the shop's warmth and advice; refuses the webshop-grid homepage.
+OWN-WORLD: Bookcloth bordeaux and warm linen with brass rules; a drawn bookshelf of real current titles as the hero object; Libre Caslon Display headlines, Caslon italic voice, Mulish labels; shelf-label section heads.
+STORY: Visitor recognises the shop → sees the breadth (bijbels tot kinderboeken) and the real, current titles → meets Marjolein, Nel en Wim → visits the store or the webshop.
+FIRST VIEWPORT: Linen field; left: Caslon headline + one-line who/where + two CTAs (Kom langs / Webshop); right: a bordeaux bookcase with nine real spines that rise into place; brass service strip beneath.
+FORM: New build; incumbent webshop template treated as anti-reference; saturated bookcloth palette chosen against the cream-default rut; no seed key (pipeline pinned world).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+
+<div class="demo-pil" aria-hidden="true">Demo</div>
+
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top">Brugzicht <span>Boeken &amp; Muziek</span></a>
+  <nav class="nav-links" id="navLinks" aria-label="Hoofdmenu">
+    <a href="#assortiment">Assortiment</a>
+    <a href="#nieuw">Nu in de winkel</a>
+    <a href="#lezen-met">Leesadvies</a>
+    <a href="#kerken">Kerken &amp; scholen</a>
+    <a href="#bezoek">Bezoek ons</a>
+    <a class="nav-cta" href="https://www.brugzicht.nl" target="_blank" rel="noopener">Webshop</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-boven">Christelijke boekhandel · Krimpen aan den IJssel</p>
+      <h1 class="hero-titel"><span class="regel"><span>Boeken die</span></span><span class="regel"><span>ergens over <em>gaan.</em></span></span></h1>
+      <p class="hero-sub">Van bijbels in tientallen vertalingen tot romans, kinderboeken en liedbundels — bij Brugzicht vindt u het, met persoonlijk advies van boekverkopers die zelf lezen.</p>
+      <div class="hero-acties">
+        <a href="#bezoek" class="knop knop-bordeaux">Kom langs in de winkel</a>
+        <a href="https://www.brugzicht.nl" target="_blank" rel="noopener" class="knop knop-lijn">Naar de webshop</a>
+      </div>
+    </div>
+    <div class="hero-kast" aria-hidden="true">
+      <div class="plank">
+        <i class="boek b1"><span>Zee van smaragd — Marianne Witvliet</span></i>
+        <i class="boek b2"><span>Echo's aan het meer — Lynn Austin</span></i>
+        <i class="boek b3"><span>De weg volgen — John Mark Comer</span></i>
+        <i class="boek b4"><span>Inferno — Arnold Huijgen</span></i>
+        <i class="boek b5"><span>Onthoud dit altijd — Charlie Mackesy</span></i>
+        <i class="boek b6"><span>Valentinus — Jamie Ogle</span></i>
+        <i class="boek b7"><span>Bloedjacht — Ryan Steck</span></i>
+        <i class="boek b8"><span>De vuurmaagd van Dillenburg — Ingrid Kretz</span></i>
+        <i class="boek b9"><span>Spion van de Mossad — Mor &amp; Schoonhoven</span></i>
+      </div>
+      <div class="plank-hout"></div>
+      <p class="plank-label">Nu in de winkel — echte titels uit ons actuele assortiment</p>
+    </div>
+  </div>
+  <div class="service-strip">
+    <span>Gratis verzending vanaf € 40</span>
+    <span>Levering aan kerken, scholen &amp; bedrijven</span>
+    <span>Di t/m za geopend</span>
+    <span>Boekenbon · VVV · Krimpenerwaardbon</span>
+  </div>
+</section>
+
+<!-- ═══ ASSORTIMENT ═══ -->
+<section class="assortiment" id="assortiment">
+  <div class="wrap">
+    <h2 class="kop reveal">Voor elke lezer <em>een plank</em></h2>
+    <ul class="kast-lijst">
+      <li class="reveal"><h3>Bijbels</h3><p>Tientallen vertalingen en uitvoeringen: HSV, NBV21, Bijbel in Gewone Taal, Statenvertaling, studiebijbels en kinderbijbels.</p></li>
+      <li class="reveal"><h3>Bijbelstudie &amp; theologie</h3><p>Van toegankelijke studies tot reformatorische theologie en de puriteinse klassieken.</p></li>
+      <li class="reveal"><h3>Romans</h3><p>Bijbelse en historische romans, streekromans en thrillers — Nederlands- en Engelstalig.</p></li>
+      <li class="reveal"><h3>Kinderen &amp; jeugd</h3><p>Kinderbijbels, prentenboeken, voorleesboeken en jeugdboeken voor elke leeftijd.</p></li>
+      <li class="reveal"><h3>Muziek &amp; liedbundels</h3><p>Psalmboeken, liedboeken, Opwekking en zangbundels voor thuis en in de gemeente.</p></li>
+      <li class="reveal"><h3>Cadeaus &amp; schrijfwaren</h3><p>Cadeauboeken, luxe notebooks van Paperblanks, agenda's, dagboeken, puzzels en spelletjes.</p></li>
+    </ul>
+    <p class="assortiment-voet reveal">Daarnaast: belijdenisboeken, Engelse boeken, e-books en boeken voor de kerkelijke gemeente.</p>
+  </div>
+</section>
+
+<!-- ═══ NU IN DE WINKEL ═══ -->
+<section class="nieuw" id="nieuw">
+  <div class="wrap">
+    <h2 class="kop kop-linnen reveal">Nu in de <em>winkel</em></h2>
+    <p class="intro intro-linnen reveal">Een greep uit wat er deze maand nieuw ligt en wat wij zelf aanraden.</p>
+    <div class="titels">
+      <article class="titel reveal"><h3>Zee van smaragd</h3><p>Marianne Witvliet</p></article>
+      <article class="titel reveal"><h3>Echo's aan het meer</h3><p>Lynn Austin</p></article>
+      <article class="titel reveal"><h3>De erfenis van Hendrica Leurs</h3><p>Marlies Medema</p></article>
+      <article class="titel reveal"><h3>De weg volgen</h3><p>John Mark Comer</p></article>
+      <article class="titel reveal"><h3>Inferno</h3><p>Arnold Huijgen</p></article>
+      <article class="titel reveal"><h3>Onthoud dit altijd</h3><p>Charlie Mackesy</p></article>
+    </div>
+    <p class="nieuw-voet reveal">Vraag ernaar in de winkel of bestel via <a href="https://www.brugzicht.nl" target="_blank" rel="noopener">de webshop</a>.</p>
+  </div>
+</section>
+
+<!-- ═══ LEZEN MET ═══ -->
+<section class="lezen" id="lezen-met">
+  <div class="wrap">
+    <h2 class="kop reveal">Lezen met <em>Marjolein, Nel &amp; Wim</em></h2>
+    <p class="intro reveal">Onze boekverkopers lezen zelf — en delen hun persoonlijke tips. Vraag in de winkel naar hun favorieten van dit moment, of volg hun leestips online.</p>
+    <div class="lezers">
+      <div class="lezer reveal"><span class="lezer-letter">M</span><h3>Lezen met Marjolein</h3></div>
+      <div class="lezer reveal"><span class="lezer-letter">N</span><h3>Lezen met Nel</h3></div>
+      <div class="lezer reveal"><span class="lezer-letter">W</span><h3>Lezen met Wim</h3></div>
+    </div>
+    <p class="lezen-quote reveal">„Het mooiste moment van dit vak: het juiste boek in de juiste handen leggen."</p>
+  </div>
+</section>
+
+<!-- ═══ KERKEN & SCHOLEN ═══ -->
+<section class="kerken" id="kerken">
+  <div class="wrap kerken-grid">
+    <div>
+      <h2 class="kop kop-linnen reveal">Voor kerken, scholen <em>&amp; bedrijven</em></h2>
+      <p class="intro intro-linnen reveal">Belijdenisgeschenken, doopkaarten, catechesemateriaal of een stapel boeken voor de schoolbibliotheek: wij leveren rechtstreeks aan kerkelijke gemeenten, scholen en bedrijven.</p>
+    </div>
+    <ul class="kerken-punten reveal">
+      <li>Advies bij belijdenis- en doopgeschenken</li>
+      <li>Levering op locatie</li>
+      <li>Gratis verzending vanaf € 40</li>
+      <li>Bestellen per e-mail of telefoon</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ BEZOEK ═══ -->
+<section class="bezoek" id="bezoek">
+  <div class="wrap bezoek-grid">
+    <div>
+      <h2 class="kop reveal">Bezoek de <em>winkel</em></h2>
+      <ul class="bezoek-lijst reveal">
+        <li><span class="b-label">Adres</span>Stad en Landschap 25/29, 2923 BK Krimpen aan den IJssel</li>
+        <li><span class="b-label">Telefoon</span><a href="tel:+31180590237">0180 – 59 02 37</a></li>
+        <li><span class="b-label">E-mail</span><a href="mailto:info@brugzicht.nl">info@brugzicht.nl</a></li>
+      </ul>
+      <table class="tijden reveal" aria-label="Openingstijden">
+        <tr><th>Maandag</th><td>Gesloten</td></tr>
+        <tr><th>Dinsdag t/m vrijdag</th><td>9:00 – 17:30</td></tr>
+        <tr><th>Zaterdag</th><td>9:00 – 17:00</td></tr>
+      </table>
+    </div>
+    <div class="kaart reveal">
+      <iframe title="Kaart Stad en Landschap 25, Krimpen aan den IJssel" src="https://www.openstreetmap.org/export/embed.html?bbox=4.586%2C51.909%2C4.618%2C51.922&amp;layer=mapnik&amp;marker=51.91545%2C4.60171" loading="lazy"></iframe>
+      <p class="kaart-voet">In winkelcentrum Stad en Landschap — parkeren voor de deur</p>
+    </div>
+  </div>
+</section>
+
+<footer class="voet">
+  <div class="wrap voet-inhoud">
+    <p class="voet-merk">Brugzicht <span>Boeken &amp; Muziek</span></p>
+    <p>Stad en Landschap 25/29 · 2923 BK Krimpen aan den IJssel · KvK 24198509</p>
+    <p class="voet-shop"><a href="https://www.brugzicht.nl" target="_blank" rel="noopener">brugzicht.nl</a></p>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

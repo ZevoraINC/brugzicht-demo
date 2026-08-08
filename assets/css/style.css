@@ -1,0 +1,178 @@
+/* Brugzicht — bookcloth bordeaux, warm linen, brass. Libre Caslon / Mulish. */
+:root{
+  --bordeaux:#5d1f2e;
+  --bordeaux-diep:#471722;
+  --linnen:#f1e9da;
+  --linnen-warm:#e9ddc8;
+  --messing:#a8802f;
+  --messing-licht:#c9a44d;
+  --inkt:#2b2118;
+  --papier:#faf6ee;
+  --teal:#274e52;
+  --wrap:1140px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',sans-serif;font-size:1.0625rem;line-height:1.7;color:var(--inkt);background:var(--linnen)}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+section{position:relative;scroll-margin-top:4.2rem}
+.kop{font-family:'Libre Caslon Display',serif;font-weight:400;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.12;letter-spacing:.005em;text-wrap:balance}
+.kop em{font-family:'Libre Caslon Text',serif;font-style:italic;color:var(--bordeaux)}
+.kop-linnen{color:var(--linnen)}
+.kop-linnen em{color:var(--messing-licht)}
+.intro{font-size:clamp(1.05rem,1.4vw,1.2rem);font-weight:300;max-width:56ch;margin-top:1.1rem}
+.intro-linnen{color:#e5d3c2}
+.reveal{opacity:1}
+
+.demo-pil{position:fixed;bottom:1.1rem;left:1.1rem;z-index:200;background:rgba(43,33,24,.85);color:var(--messing-licht);font-size:.7rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:.4rem .95rem .4rem 1.2rem;border-radius:99px;border:1px solid rgba(201,164,77,.4);backdrop-filter:blur(4px);pointer-events:none}
+
+/* ─── nav ─── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem)}
+.nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(93,31,46,.97);backdrop-filter:blur(10px);box-shadow:0 3px 16px rgba(0,0,0,.22);opacity:0;transition:opacity .35s}
+.nav.vast::before{opacity:1}
+.nav-brand{font-family:'Libre Caslon Display',serif;font-size:1.3rem;color:var(--inkt);text-decoration:none;transition:color .35s}
+.nav-brand span{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:.95rem;color:var(--bordeaux);transition:color .35s}
+.nav.vast .nav-brand{color:var(--linnen)}
+.nav.vast .nav-brand span{color:var(--messing-licht)}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{color:var(--inkt);text-decoration:none;font-size:.92rem;font-weight:600;position:relative;transition:color .35s}
+.nav.vast .nav-links a{color:var(--linnen)}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-5px;width:100%;height:1.5px;background:var(--messing);transform:scaleX(0);transform-origin:right;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{background:var(--bordeaux);color:var(--linnen)!important;padding:.55rem 1.3rem;border-radius:2px;transition:background .25s,transform .25s}
+.nav.vast .nav-cta{background:var(--messing)}
+.nav-cta:hover{background:var(--bordeaux-diep);transform:translateY(-1px)}
+.nav-toggle{display:none;background:none;border:0;width:2.2rem;height:2rem;cursor:pointer;position:relative;z-index:110}
+.nav-toggle span{position:absolute;left:.25rem;right:.25rem;height:2px;background:var(--inkt);transition:transform .35s,top .35s,background .35s}
+.nav.vast .nav-toggle span{background:var(--linnen)}
+.nav-toggle span:nth-child(1){top:.55rem}
+.nav-toggle span:nth-child(2){top:1.25rem}
+.nav-toggle.open span:nth-child(1){top:.9rem;transform:rotate(45deg)}
+.nav-toggle.open span:nth-child(2){top:.9rem;transform:rotate(-45deg)}
+@media(max-width:860px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;inset:0;background:var(--bordeaux-diep);flex-direction:column;justify-content:center;gap:1.9rem;transform:translateY(-102%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{font-size:1.25rem;color:var(--linnen)!important}
+}
+
+/* ─── knoppen ─── */
+.knop{display:inline-block;font-weight:700;font-size:.98rem;text-decoration:none;padding:.9rem 1.9rem;border-radius:2px;transition:transform .25s,background .25s,box-shadow .25s}
+.knop-bordeaux{background:var(--bordeaux);color:var(--linnen)}
+.knop-bordeaux:hover{background:var(--bordeaux-diep);transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(71,23,34,.6)}
+.knop-lijn{color:var(--inkt);box-shadow:inset 0 0 0 1.5px var(--messing)}
+.knop-lijn:hover{background:rgba(168,128,47,.1)}
+
+/* ─── hero ─── */
+.hero{background:var(--linnen);padding-top:7.5rem;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:end;min-height:calc(100svh - 11rem)}
+.hero-boven{font-size:.82rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--messing)}
+.hero-titel{font-family:'Libre Caslon Display',serif;font-weight:400;font-size:clamp(2.9rem,6.5vw,5.2rem);line-height:1.05;margin-top:1.2rem}
+.hero-titel .regel{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+.hero-titel .regel>span{display:inline-block}
+.hero-titel em{font-family:'Libre Caslon Text',serif;font-style:italic;color:var(--bordeaux)}
+.hero-sub{margin-top:1.5rem;max-width:48ch;font-size:clamp(1.05rem,1.4vw,1.2rem);font-weight:300}
+.hero-acties{display:flex;flex-wrap:wrap;gap:1rem;margin:2.2rem 0 3rem}
+/* de boekenkast */
+.hero-kast{padding-bottom:2.4rem}
+.plank{display:flex;align-items:flex-end;gap:.45rem;padding:0 1.2rem;min-height:15rem}
+.boek{position:relative;display:block;border-radius:2px 2px 0 0;box-shadow:inset -3px 0 6px rgba(0,0,0,.28),inset 2px 0 3px rgba(255,255,255,.12);cursor:default;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.boek:hover{transform:translateY(-.55rem)}
+.boek span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;font-family:'Libre Caslon Text',serif;font-size:.68rem;letter-spacing:.04em;color:rgba(250,246,238,.92);padding:.6rem .1rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.b1{width:2.6rem;height:13.5rem;background:var(--teal)}
+.b2{width:2.2rem;height:12.2rem;background:var(--bordeaux)}
+.b3{width:2.9rem;height:14.2rem;background:var(--messing)}
+.b4{width:2.1rem;height:11.4rem;background:#31404a}
+.b5{width:2.5rem;height:12.8rem;background:#7a3b22}
+.b6{width:2.3rem;height:13.9rem;background:var(--bordeaux-diep)}
+.b7{width:2.7rem;height:12rem;background:#54341f}
+.b8{width:2.2rem;height:13.2rem;background:#3d5240}
+.b9{width:2.8rem;height:14.6rem;background:#6e5580}
+.plank-hout{height:1rem;background:linear-gradient(#8a5f38,#6d4826);border-radius:2px;box-shadow:0 10px 24px -10px rgba(43,33,24,.5)}
+.plank-label{margin-top:1.1rem;text-align:center;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:.9rem;color:#7a6b55}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;align-items:start}
+  .hero-kast{max-width:26rem;margin:0 auto}
+  .plank{min-height:12rem}
+  .boek{height:70%!important}
+}
+/* service strip */
+.service-strip{background:var(--bordeaux);display:flex;flex-wrap:wrap;justify-content:center;gap:0}
+.service-strip span{padding:1rem 1.9rem;color:#ecd9c9;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:640px){.service-strip span{padding:.55rem 1rem;font-size:.72rem}}
+
+/* ─── assortiment ─── */
+.assortiment{background:var(--papier);padding:clamp(4.5rem,9vw,7.5rem) 0}
+.kast-lijst{list-style:none;margin-top:clamp(2rem,4vw,3rem);display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,4rem)}
+.kast-lijst li{padding:1.5rem .2rem;border-bottom:1px solid rgba(168,128,47,.4);transition:background .3s}
+.kast-lijst li:hover{background:rgba(168,128,47,.06)}
+.kast-lijst h3{font-family:'Libre Caslon Display',serif;font-weight:400;font-size:1.4rem;color:var(--bordeaux)}
+.kast-lijst p{margin-top:.4rem;font-size:.97rem;font-weight:300;color:#4d4234}
+.assortiment-voet{margin-top:2rem;font-family:'Libre Caslon Text',serif;font-style:italic;color:#7a6b55;text-align:center}
+@media(max-width:760px){.kast-lijst{grid-template-columns:1fr}}
+
+/* ─── nu in de winkel ─── */
+.nieuw{background:var(--bordeaux);padding:clamp(4.5rem,9vw,7.5rem) 0}
+.titels{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:clamp(2rem,4vw,3rem)}
+.titel{background:var(--papier);border-radius:2px;padding:1.6rem 1.5rem 1.4rem;border-top:5px solid var(--messing);transition:transform .35s,box-shadow .35s}
+.titel:hover{transform:translateY(-5px);box-shadow:0 18px 34px -18px rgba(0,0,0,.45)}
+.titel h3{font-family:'Libre Caslon Display',serif;font-weight:400;font-size:1.25rem;line-height:1.25;color:var(--inkt)}
+.titel p{margin-top:.4rem;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:.95rem;color:var(--bordeaux)}
+.nieuw-voet{margin-top:2rem;text-align:center;color:#ecd9c9;font-size:.95rem}
+.nieuw-voet a{color:var(--messing-licht)}
+@media(max-width:820px){.titels{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.titels{grid-template-columns:1fr}}
+
+/* ─── lezen met ─── */
+.lezen{background:var(--linnen);padding:clamp(4.5rem,9vw,7.5rem) 0;text-align:center}
+.lezen .intro{margin-left:auto;margin-right:auto}
+.lezers{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(1.5rem,4vw,3rem);margin-top:clamp(2rem,4vw,3rem)}
+.lezer{display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.lezer-letter{display:grid;place-items:center;width:5.2rem;height:5.2rem;border-radius:50%;border:1.5px solid var(--messing);font-family:'Libre Caslon Display',serif;font-size:2rem;color:var(--bordeaux);background:var(--papier)}
+.lezer h3{font-family:'Libre Caslon Text',serif;font-style:italic;font-weight:400;font-size:1.1rem;color:var(--inkt)}
+.lezen-quote{margin:3rem auto 0;max-width:44ch;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.5;color:var(--bordeaux)}
+
+/* ─── kerken ─── */
+.kerken{background:var(--teal);padding:clamp(4.5rem,9vw,7.5rem) 0}
+.kerken .intro-linnen{color:#cfdedd}
+.kerken .kop-linnen em{color:var(--messing-licht)}
+.kerken-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.kerken-punten{list-style:none}
+.kerken-punten li{padding:.95rem 0 .95rem 2.1rem;position:relative;border-bottom:1px solid rgba(236,217,201,.2);color:#e8f0ef;font-weight:300}
+.kerken-punten li:last-child{border-bottom:0}
+.kerken-punten li::before{content:"";position:absolute;left:.2rem;top:1.45rem;width:.5rem;height:.5rem;background:var(--messing-licht);border-radius:1px;transform:rotate(45deg)}
+@media(max-width:820px){.kerken-grid{grid-template-columns:1fr}}
+
+/* ─── bezoek ─── */
+.bezoek{background:var(--papier);padding:clamp(4.5rem,9vw,7.5rem) 0}
+.bezoek-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.bezoek-lijst{list-style:none;margin-top:1.8rem}
+.bezoek-lijst li{padding:.8rem 0;border-bottom:1px solid rgba(168,128,47,.35);font-size:1rem}
+.bezoek-lijst li:last-child{border-bottom:0}
+.b-label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--messing);margin-bottom:.15rem}
+.bezoek-lijst a{color:var(--inkt);font-weight:600}
+.tijden{margin-top:1.6rem;border-collapse:collapse;width:100%}
+.tijden th{text-align:left;font-weight:600;padding:.55rem 0;color:var(--bordeaux);font-size:.95rem}
+.tijden td{text-align:right;padding:.55rem 0;font-size:.95rem}
+.tijden tr{border-bottom:1px solid rgba(168,128,47,.25)}
+.tijden tr:last-child{border-bottom:0}
+.kaart iframe{width:100%;height:340px;border:1.5px solid var(--inkt);box-shadow:.8rem .8rem 0 var(--bordeaux)}
+.kaart-voet{margin-top:1.3rem;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:.9rem;color:#7a6b55}
+@media(max-width:820px){.bezoek-grid{grid-template-columns:1fr}}
+
+/* ─── footer ─── */
+.voet{background:var(--inkt);color:#b3a48f;padding:2.5rem 0}
+.voet-inhoud{display:flex;flex-wrap:wrap;align-items:baseline;gap:.9rem 2.4rem;font-size:.87rem}
+.voet-merk{font-family:'Libre Caslon Display',serif;font-size:1.2rem;color:var(--linnen)}
+.voet-merk span{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:.9rem;color:var(--messing-licht)}
+.voet-shop{margin-left:auto}
+.voet-shop a{color:var(--messing-licht)}
+@media(max-width:700px){.voet-shop{margin-left:0}}
+
+/* capture mode */
+.flat .hero-grid{min-height:640px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
