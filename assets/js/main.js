@@ -30,19 +30,30 @@
   if (reduce || typeof gsap === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
-  /* hero: books rise onto the shelf, then copy settles */
-  var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-    .from('.hero-boven', { y: 16, opacity: 0, duration: 0.8 }, 0.15)
-    .from('.hero-titel .regel > span', { yPercent: 112, duration: 1, stagger: 0.13 }, 0.3)
-    .from('.hero-sub, .hero-acties', { y: 20, opacity: 0, duration: 0.85, stagger: 0.13 }, 0.85)
-    .from('.plank-hout', { scaleX: 0, transformOrigin: 'left center', duration: 0.7 }, 0.4)
-    .from('.boek', { yPercent: 108, opacity: 0, duration: 0.75, stagger: 0.07, ease: 'back.out(1.4)' }, 0.7)
-    .from('.plank-label', { opacity: 0, duration: 0.8 }, 1.6)
-    .from('.service-strip span', { y: 20, opacity: 0, duration: 0.6, stagger: 0.08 }, 1.3);
-  /* vangnet: in verborgen tabs/previews tikt rAF niet — spring dan direct naar de eindstand,
-     en forceer sowieso de eindstand als de intro na 4s nog niet klaar is */
-  if (document.hidden) heroTl.progress(1);
-  setTimeout(function () { if (heroTl.progress() < 1) heroTl.progress(1); }, 4000);
+  /* hero-entrance is pure CSS (zie style.css, html.anim). De schakelaar gaat pas om
+     nadat twee echte animatieframes zijn getikt in een zichtbare tab — in verborgen
+     tabs, previews en screenshots blijft de pagina dus gewoon in eindstand staan. */
+  var armed = false;
+  var arm = function () {
+    if (armed || document.visibilityState !== 'visible') return;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        if (armed || document.visibilityState !== 'visible') return;
+        armed = true;
+        document.documentElement.classList.add('anim');
+        /* waakhond: sommige renderers (previews, screenshots) bevriezen de
+           animatieklok terwijl timers doorlopen — is er na 3,5s nog geen enkele
+           animatie afgerond, strip dan de klasse zodat alles in eindstand staat */
+        var klaar = false;
+        document.addEventListener('animationend', function () { klaar = true; }, { once: true });
+        setTimeout(function () {
+          if (!klaar) document.documentElement.classList.remove('anim');
+        }, 3500);
+      });
+    });
+  };
+  arm();
+  document.addEventListener('visibilitychange', arm);
 
   /* idle: one book peeks now and then */
   var boeken = gsap.utils.toArray('.boek');

@@ -91,6 +91,28 @@ section{position:relative;scroll-margin-top:4.2rem}
 .b9{--w:2.8rem;--h:14.6rem;width:var(--w);height:var(--h);background:#6e5580}
 .plank-hout{height:1rem;background:linear-gradient(#8a5f38,#6d4826);border-radius:2px;box-shadow:0 10px 24px -10px rgba(43,33,24,.5)}
 .plank-label{margin-top:1.1rem;text-align:center;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:.9rem;color:#7a6b55}
+/* entrance als pure CSS-animatie: eindstand is gegarandeerd, ook als rAF/JS niet tikt
+   (achtergrond-tab, preview, spaarstand) — html.anim wordt door JS gezet, zonder JS = direct eindstand */
+@keyframes bz-rijs{from{transform:translateY(108%);opacity:0}to{transform:none;opacity:1}}
+@keyframes bz-titel{from{transform:translateY(112%)}to{transform:none}}
+@keyframes bz-fade{from{opacity:0}to{opacity:1}}
+@keyframes bz-fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes bz-groei{from{transform:scaleX(0)}to{transform:none}}
+html.anim .boek{animation:bz-rijs .75s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(.7s + var(--i)*.07s)}
+.b1{--i:0}.b2{--i:1}.b3{--i:2}.b4{--i:3}.b5{--i:4}.b6{--i:5}.b7{--i:6}.b8{--i:7}.b9{--i:8}
+html.anim .plank-hout{transform-origin:left center;animation:bz-groei .7s cubic-bezier(.22,1,.36,1) .4s both}
+html.anim .plank-label{animation:bz-fade .8s ease 1.6s both}
+html.anim .hero-boven{animation:bz-fadeup .8s cubic-bezier(.22,1,.36,1) .15s both}
+html.anim .hero-titel .regel:nth-child(1)>span{animation:bz-titel 1s cubic-bezier(.22,1,.36,1) .3s both}
+html.anim .hero-titel .regel:nth-child(2)>span{animation:bz-titel 1s cubic-bezier(.22,1,.36,1) .43s both}
+html.anim .hero-titel .regel:nth-child(3)>span{animation:bz-titel 1s cubic-bezier(.22,1,.36,1) .56s both}
+html.anim .hero-sub{animation:bz-fadeup .85s cubic-bezier(.22,1,.36,1) .85s both}
+html.anim .hero-acties{animation:bz-fadeup .85s cubic-bezier(.22,1,.36,1) .98s both}
+html.anim .service-strip span{animation:bz-fadeup .6s cubic-bezier(.22,1,.36,1) both}
+html.anim .service-strip span:nth-child(1){animation-delay:1.3s}
+html.anim .service-strip span:nth-child(2){animation-delay:1.38s}
+html.anim .service-strip span:nth-child(3){animation-delay:1.46s}
+html.anim .service-strip span:nth-child(4){animation-delay:1.54s}
 @media(max-width:880px){
   .hero-grid{grid-template-columns:1fr;align-items:start}
   .hero-kast{max-width:26rem;margin:0 auto}
